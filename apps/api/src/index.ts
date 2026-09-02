@@ -258,7 +258,7 @@ app.delete('/api/users/:id', authMiddleware, async (req: Request, res: Response)
   }
 });
 
-app.listen(port, async () => {
+app.listen(port, '0.0.0.0', async () => {
   await seedDemoUser();
   console.log(`API running on http://localhost:${port}`);
 });
