@@ -58,10 +58,9 @@ const TOKEN_KEY = 'finance_token';
 
 const emptyAuth = {
   name: '',
-  email: 'canova692@gmail.com',
+  email: '',
   password: '',
 };
-
 
 const today = () => new Date().toISOString().slice(0, 10);
 
