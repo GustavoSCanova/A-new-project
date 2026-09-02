@@ -325,46 +325,6 @@ function App() {
           </form>
         </div>
 
-      {deleteUserConfirm && (
-        <div className="modal-overlay" onClick={() => { setDeleteUserConfirm(null); setDeleteUserPassword(''); }}>
-          <div className="modal-box modal-confirm" onClick={(e) => e.stopPropagation()}>
-            <h3>Deletar Conta</h3>
-            <p>Tem certeza que deseja deletar sua conta? Esta ação não pode ser desfeita e deletará todos os seus dados.</p>
-            <div style={{ marginBottom: '1rem' }}>
-              <label htmlFor="delete-password" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                Digite sua senha para confirmar:
-              </label>
-              <input
-                id="delete-password"
-                type="password"
-                className="form-input"
-                value={deleteUserPassword}
-                onChange={(e) => setDeleteUserPassword(e.target.value)}
-                placeholder="Sua senha"
-                style={{ width: '100%', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' }}
-              />
-            </div>
-            <div className="modal-actions">
-              <button
-                type="button"
-                className="secondary-button"
-                onClick={() => { setDeleteUserConfirm(null); setDeleteUserPassword(''); }}
-              >
-                Cancelar
-              </button>
-              <button
-                type="button"
-                className="danger-button"
-                onClick={() => void handleDeleteUser()}
-                disabled={!deleteUserPassword}
-              >
-                Deletar Conta
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       </main>
     );
   }
@@ -542,6 +502,46 @@ function App() {
         </div>
           </section>
         </>
+      )}
+
+      {deleteUserConfirm && (
+        <div className="modal-overlay" onClick={() => { setDeleteUserConfirm(null); setDeleteUserPassword(''); }}>
+          <div className="modal-box modal-confirm" onClick={(e) => e.stopPropagation()}>
+            <h3>Deletar Conta</h3>
+            <p>Tem certeza que deseja deletar sua conta? Esta ação não pode ser desfeita e deletará todos os seus dados.</p>
+            <div style={{ marginBottom: '1rem' }}>
+              <label htmlFor="delete-password" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                Digite sua senha para confirmar:
+              </label>
+              <input
+                id="delete-password"
+                type="password"
+                className="form-input"
+                value={deleteUserPassword}
+                onChange={(e) => setDeleteUserPassword(e.target.value)}
+                placeholder="Sua senha"
+                style={{ width: '100%', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '4px' }}
+              />
+            </div>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={() => { setDeleteUserConfirm(null); setDeleteUserPassword(''); }}
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                className="danger-button"
+                onClick={() => void handleDeleteUser()}
+                disabled={!deleteUserPassword}
+              >
+                Deletar Conta
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {editingId && editFormData && (
