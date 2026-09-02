@@ -1,0 +1,18 @@
+{
+  "name": "a-new-project",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @a-new-project/web run dev",
+    "dev:api": "npm --workspace @a-new-project/api run dev",
+    "dev:mobile": "npm --workspace @a-new-project/mobile run start",
+    "build": "npm --workspace @a-new-project/shared run build && npm --workspace @a-new-project/api run build && npm --workspace @a-new-project/web run build",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}
