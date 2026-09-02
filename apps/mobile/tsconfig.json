@@ -2,6 +2,8 @@
   "extends": "../../node_modules/expo/tsconfig.base.json",
   "compilerOptions": {
     "strict": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["react"],
+    "typeRoots": ["./node_modules/@types"]
   }
 }

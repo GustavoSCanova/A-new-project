@@ -37,7 +37,7 @@ type Summary = {
 
 type AuthMode = 'login' | 'register';
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'http://192.168.15.168:3001';
 const TOKEN_KEY = 'finance_token';
 
 const emptyAuth = {
@@ -46,7 +46,14 @@ const emptyAuth = {
   password: '123456',
 };
 
-const emptyForm = {
+const emptyForm: {
+  title: string;
+  amount: string;
+  category: string;
+  type: 'income' | 'expense';
+  description: string;
+  date: string;
+} = {
   title: '',
   amount: '',
   category: '',
